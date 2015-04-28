@@ -30,7 +30,7 @@
 <body>
 	<!-- Main Window -->
 	<div id = "Stem">
-		<table id = "table1" class = "table1" cellspacing = "0" border = "1px" cellpadding = "4" style = "margin-left: 350px; width: 500px;">
+		<table id = "stem1" class = "stem1" cellspacing = "0" border = "1px" cellpadding = "4" style = "margin-left: 350px; width: 500px;">
 			<col width = "200px">
 			<col width = "200px">
 			<col width = "200px"> 
@@ -42,7 +42,7 @@
 		</tr>
 
 		<tr>
-			<td colspan="3"> <button id = "start" class="start" onclick="">+</button> </td>
+			<td colspan="3"> <button id = "start" class="start" width ="25px" onclick="">+</button> </td>
 			
 		</tr>
 
@@ -54,13 +54,50 @@
 	<div id = "Parameters">
 		<form>
 			
-		
+			Portfolio Name:
+			<input type="text" name="portfolioName">
+			<br>
+			<br>
+			Cash:
+			<input type="text" name="cash">
+			<br>
+			<br>
+			Commission:
+			<input type="text" name="commission">
+			<br>
+			<br>
+
+			<input type="radio" name="type" value="percent" id="percent">%
+			
+			<input type="radio" name="type" value="fixed" id="fixed">Fixed
 
 		</form>
 	</div>
 
 	<!-- Portfolio Simulator -->
 	<div id = "Simulator">
+
+	<table id = "sim1" class = "sim1" cellspacing = "0" border = "1px" cellpadding = "4" style = "margin-left: 350px; width: 500px;">
+				<col width = "200px">
+				<col width = "200px">
+				<col width = "200px"> 
+				<col width = "200px"> 
+
+			<tr>
+				<td> Stock </td>
+				<td> Value </td>
+				<td> % Change </td>
+				<td> % Portfolio </td>
+			</tr>
+
+			<tr>
+				<td colspan="1"> <button id = "startTrade" class="startTrade" onclick="">+</button> </td>
+				<td colspan="2"> <button id = "viewPort" class="viewPort" width ="25px" onclick="">View Portfolios </button> </td>
+				<td colspan="2"> <button id = "market" class="market" width ="25px" onclick=""> Put on Market </button> </td>
+			</tr>
+
+		</table>
+
 	</div>
 
 	<!-- Popup windows -->
