@@ -19,6 +19,9 @@
 		<!-- Stores functions -->
 		<script type = "text/javascript" src = "js/Trade.js"></script>
 
+		<!-- Controls Program Flow -->
+		<script type = "text/javascript" src = "js/ShowHide.js"></script>
+
 	<!-- jquery -->
 	
 	<!-- CSS -->
@@ -42,7 +45,7 @@
 		</tr>
 
 		<tr>
-			<td colspan="3"> <button id = "start" class="start" width ="25px" onclick="">+</button> </td>
+			<td colspan="3"> <button id = "start" class="start" width ="25px" onclick="hideStem()">+</button> </td>
 			
 		</tr>
 
@@ -51,31 +54,30 @@
 	</div>
 
 	<!-- Set Parameters -->
-	<div id = "Parameters">
-		<form>
+	<div id = "Parameters" style="display: none;">
+		<form onSubmit="JavaScript:showSim()">
 			
 			Portfolio Name:
 			<input type="text" name="portfolioName">
-			<br>
-			<br>
+			<br><br>
 			Cash:
 			<input type="text" name="cash">
-			<br>
-			<br>
+			<br><br>
 			Commission:
 			<input type="text" name="commission">
-			<br>
-			<br>
+			<br><br>
 
 			<input type="radio" name="type" value="percent" id="percent">%
 			
 			<input type="radio" name="type" value="fixed" id="fixed">Fixed
+			<br><br>
+			<input type="submit" value="Next">
 
 		</form>
 	</div>
 
 	<!-- Portfolio Simulator -->
-	<div id = "Simulator">
+	<div id = "Simulator" style="display: none;">
 
 	<table id = "sim1" class = "sim1" cellspacing = "0" border = "1px" cellpadding = "4" style = "margin-left: 350px; width: 500px;">
 				<col width = "200px">
@@ -102,14 +104,35 @@
 
 	<!-- Popup windows -->
 	<!-- Make trade (Popup) -->
-	<div id = "Trade">
+	<div id = "Trade" style="display: none;">
+
+		<form>
+			
+			Stock:
+			<input type="text" name="stockName" value="Enter Ticker">
+			Amount:
+			<input type="text" name="amount" value="#">
+			<br><br>
+			<input type="submit" value="Buy">
+			<input type="submit" value="Sell">
+
+		</form>
+
 	</div>
 
 	<!-- Put on market place (Popup) -->
-	<div id = "Market">
+	<div id = "Market" style="display: none;">
+
+		<form>
+			
+			Monthly Cost:
+			<input type="text" name="monthlyCost" value="Free">
+			<br><br>
+			<input type="submit" value="Put on Market">
+			
+		</form>
+
 	</div>
-
-
 	
 
 <script type="text/javascript">
