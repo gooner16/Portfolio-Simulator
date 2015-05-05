@@ -1,17 +1,18 @@
+'use strict'; 
+
 function hideStem() {
-    var hide = document.getElementById('Stem');
-    var show = document.getElementById('Parameters');
-    if (hide.style.display !== 'none') {
-        hide.style.display = 'none';
-        show.style.display = 'block';
-    }
-    else {
-        hide.style.display = 'block';
-    }
-};
+	var divStem = document.getElementById('Stem');
+	var divPara = document.getElementById('Parameters');
+	if (divStem.style.display == 'block') {
+		divStem.style.display = 'none';
+		divPara.style.display = 'block';
+	}
+	else {
+		divStem.style.display = 'block';
+	}
+}
 
 function showSim() {
-    var show = document.getElementById('Simulator');
-        show.style.display = 'block';
-
-};
+	var divPara = document.getElementById('Simulator');
+		divPara.style.display = 'block';
+}

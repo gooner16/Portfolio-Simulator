@@ -32,8 +32,8 @@
 
 <body>
 	<!-- Main Window -->
-	<div id = "Stem">
-		<table id = "stem1" class = "stem1" cellspacing = "0" border = "1px" cellpadding = "4" style = "margin-left: 350px; width: 500px;">
+	<div1 id = "Stem" style = "display: block; margin-left: 50px; margin-top: 20px;">
+		<table id = "stem1" class = "stem1" cellspacing = "0" border = "1px" cellpadding = "4">
 			<col width = "200px">
 			<col width = "200px">
 			<col width = "200px"> 
@@ -54,15 +54,17 @@
 	</div>
 
 	<!-- Set Parameters -->
-	<div id = "Parameters" style="display: none;">
+	<div2 id = "Parameters" style="display: block; width: 200px; margin-left: 600px; margin-top: 20px;">
 		<form onSubmit="JavaScript:showSim()">
 			
 			Portfolio Name:
 			<input type="text" name="portfolioName">
 			<br><br>
+
 			Cash:
 			<input type="text" name="cash">
 			<br><br>
+
 			Commission:
 			<input type="text" name="commission">
 			<br><br>
@@ -71,15 +73,15 @@
 			
 			<input type="radio" name="type" value="fixed" id="fixed">Fixed
 			<br><br>
+
 			<input type="submit" value="Next">
 
 		</form>
 	</div>
 
 	<!-- Portfolio Simulator -->
-	<div id = "Simulator" style="display: none;">
-
-	<table id = "sim1" class = "sim1" cellspacing = "0" border = "1px" cellpadding = "4" style = "margin-left: 350px; width: 500px;">
+	<div id = "Simulator" style = "display: block; margin-left: 150px; width: 500px;">
+	<table id = "sim1" class = "sim1" cellspacing = "0" border = "1px" cellpadding = "4">
 				<col width = "200px">
 				<col width = "200px">
 				<col width = "200px"> 
@@ -104,7 +106,7 @@
 
 	<!-- Popup windows -->
 	<!-- Make trade (Popup) -->
-	<div id = "Trade" style="display: none;">
+	<div id = "Trade" style="display: block;">
 
 		<form>
 			
@@ -121,7 +123,7 @@
 	</div>
 
 	<!-- Put on market place (Popup) -->
-	<div id = "Market" style="display: none;">
+	<div id = "Market" style="display: block;">
 
 		<form>
 			
