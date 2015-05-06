@@ -46,7 +46,7 @@
 		</tr>
 
 		<tr>
-			<td colspan="3"> <button id = "start" class="start" width ="25px" onclick="hideStem()"> + </button> </td>
+			<td colspan="3"> <button id = "start" class="start" width ="25px" onclick="setPara()"> + </button> </td>
 			
 		</tr>
 
@@ -56,7 +56,8 @@
 
 	<!-- Set Parameters -->
 	<div2 id = "Parameters" style="float: left; display: block; position: fixed; left: 600px; top: 20px; width: 200px;">
-		<form onSubmit="JavaScript:showSim()">
+		
+		<form >
 			
 			Portfolio Name:
 			<input type="text" name="portfolioName">
@@ -75,9 +76,9 @@
 			<input type="radio" name="type" value="fixed" id="fixed">Fixed
 			<br><br>
 
-			<input type="submit" value="Next">
-
+			<input type="button" value="Next" onclick="showSim()">
 		</form>
+
 	</div2>
 
 	<!-- Portfolio Simulator -->
