@@ -31,8 +31,9 @@
 </head>
 
 <body>
+
 	<!-- Main Window -->
-	<div1 id = "Stem" style = "display: block; margin-left: 50px; margin-top: 20px;">
+	<div1 id = "Stem" style = "float: left; display: block; position: fixed; left: 50px; top: 40px;">
 		<table id = "stem1" class = "stem1" cellspacing = "0" border = "1px" cellpadding = "4">
 			<col width = "200px">
 			<col width = "200px">
@@ -45,16 +46,16 @@
 		</tr>
 
 		<tr>
-			<td colspan="3"> <button id = "start" class="start" width ="25px" onclick="hideStem()">+</button> </td>
+			<td colspan="3"> <button id = "start" class="start" width ="25px" onclick="hideStem()"> + </button> </td>
 			
 		</tr>
 
 		</table>
 
-	</div>
+	</div1>
 
 	<!-- Set Parameters -->
-	<div2 id = "Parameters" style="display: block; width: 200px; margin-left: 600px; margin-top: 20px;">
+	<div2 id = "Parameters" style="float: left; display: block; position: fixed; left: 600px; top: 20px; width: 200px;">
 		<form onSubmit="JavaScript:showSim()">
 			
 			Portfolio Name:
@@ -77,11 +78,11 @@
 			<input type="submit" value="Next">
 
 		</form>
-	</div>
+	</div2>
 
 	<!-- Portfolio Simulator -->
-	<div id = "Simulator" style = "display: block; margin-left: 150px; width: 500px;">
-	<table id = "sim1" class = "sim1" cellspacing = "0" border = "1px" cellpadding = "4">
+	<div1 id = "Simulator" style = "float: left; display: block; position: fixed; left: 850px; top: 60px;">
+		<table id = "sim1" class = "sim1" cellspacing = "0" border = "1px" cellpadding = "4">
 				<col width = "200px">
 				<col width = "200px">
 				<col width = "200px"> 
@@ -102,11 +103,11 @@
 
 		</table>
 
-	</div>
+	</div1>
 
 	<!-- Popup windows -->
 	<!-- Make trade (Popup) -->
-	<div id = "Trade" style="display: block;">
+	<div2 id = "Trade" style="float: left; display: block; position: fixed; left: 50px; top: 400px;">
 
 		<form>
 			
@@ -120,10 +121,10 @@
 
 		</form>
 
-	</div>
+	</div2>
 
 	<!-- Put on market place (Popup) -->
-	<div id = "Market" style="display: block;">
+	<div2 id = "Market" style="float: left; display: block; position: fixed; left: 500px; top: 500px;">
 
 		<form>
 			
@@ -134,8 +135,7 @@
 			
 		</form>
 
-	</div>
-	
+	</div2>
 
 <script type="text/javascript">
 
