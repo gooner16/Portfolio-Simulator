@@ -4,11 +4,12 @@
 <head>
 	<title>Portfolio Simulator</title>
 	<!-- Framework -->
-	<script type = "text/javascript" src = "vendors/stockrender-apprender.1.0.0.min.js"> </script>
+	<script type = "text/javascript" src = "vendors/stockrender-apprender.1.0.0.min.js"></script>
 	
 	<!-- Vendors script -->
 	<script type = "text/javascript" src = "vendors/autocomplete/currency-autocomplete.js"></script>
-	<script type = "text/javascript" src = "vendors\jscolor-1.4.4\jscolor\jscolor.js"></script>
+	<script type = "text/javascript" src = "vendors/jscolor-1.4.4/jscolor/jscolor.js"></script>
+	
 
 	<!-- Supplementary scripts -->
 	
@@ -54,8 +55,7 @@
 	</div>
 
 	<!-- Set Parameters -->
-	<div id = "Parameters" style="display: none;">
-		<form onSubmit="JavaScript:showSim()">
+	<div id="Parameters" style="display: none;">
 			
 			Portfolio Name:
 			<input type="text" name="portfolioName">
@@ -71,9 +71,8 @@
 			
 			<input type="radio" name="type" value="fixed" id="fixed">Fixed
 			<br><br>
-			<input type="submit" value="Next">
+			<input type="submit" value="Next" onclick="showSim()">
 
-		</form>
 	</div>
 
 	<!-- Portfolio Simulator -->
@@ -93,9 +92,9 @@
 			</tr>
 
 			<tr>
-				<td colspan="1"> <button id = "startTrade" class="startTrade" onclick="">+</button> </td>
-				<td colspan="2"> <button id = "viewPort" class="viewPort" width ="25px" onclick="">View Portfolios </button> </td>
-				<td colspan="2"> <button id = "market" class="market" width ="25px" onclick=""> Put on Market </button> </td>
+				<td colspan="1"> <button id = "startTrade" class="startTrade" onclick="showTrade()">+</button> </td>
+				<td colspan="2"> <button id = "viewPort" class="viewPort" width ="25px" onclick="showPortfolios()">View Portfolios </button> </td>
+				<td colspan="2"> <button id = "market" class="market" width ="25px" onclick="showMarket()"> Put on Market </button> </td>
 			</tr>
 
 		</table>
@@ -105,39 +104,27 @@
 	<!-- Popup windows -->
 	<!-- Make trade (Popup) -->
 	<div id = "Trade" style="display: none;">
-
-		<form>
 			
 			Stock:
 			<input type="text" name="stockName" value="Enter Ticker">
 			Amount:
 			<input type="text" name="amount" value="#">
 			<br><br>
-			<input type="submit" value="Buy">
-			<input type="submit" value="Sell">
-
-		</form>
+			<input type="submit" value="Buy" onclick="hideTrade()">
+			<input type="submit" value="Sell" onclick="hideTrade()">
 
 	</div>
 
 	<!-- Put on market place (Popup) -->
 	<div id = "Market" style="display: none;">
 
-		<form>
-			
 			Monthly Cost:
 			<input type="text" name="monthlyCost" value="Free">
 			<br><br>
-			<input type="submit" value="Put on Market">
-			
-		</form>
+			<input type="submit" value="Put on Market" onclick="hideMarket()">
 
 	</div>
-	
 
-<script type="text/javascript">
-
-</script>
 
 </body>
 </html>
