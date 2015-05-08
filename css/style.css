@@ -3,5 +3,25 @@
 .autocomplete-selected { background: #B8DBFF; }
 .autocomplete-suggestions strong { font-weight: normal; color: #3399ff; }
 
-button.start { background:none;border:none; }
-button.startTrade { background:none;border:none; }
+div1 {
+	width: 498px;
+	border-style: solid;
+	border-width: 1px;
+	padding: 1px;
+}
+
+div2 {
+	width: 480px;
+	border-style: solid;
+	border-width: 2px;
+	padding: 10px;
+}
+
+button.start {
+	background:none;
+	border:none;
+}
+button.startTrade {
+	background:none;
+	border:none;
+}

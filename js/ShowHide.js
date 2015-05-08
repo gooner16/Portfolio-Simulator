@@ -1,49 +1,37 @@
-function hideStem() {
-    var hide = document.getElementById('Stem');
-    var show = document.getElementById('Parameters');
-        hide.style.display = 'none';
-        show.style.display = 'block';
-};
+'use strict'; 
+var index = -1
 
-function showSim() {
-	var hide = document.getElementById('Parameters');
-    var show = document.getElementById('Simulator');
-        hide.style.display = 'none';
-        show.style.display = 'block';
-};
+function showWindow(index) {
+	//Refer to different windows (divs)
+	var divStem = document.getElementById('Stem');
+	var divPara = document.getElementById('Parameters');
+	var divSim = document.getElementById('Simulator');
+	var divPopTrade = document.getElementById('Trade');
+	var divPopMarket = document.getElementById('Market');
 
-function showTrade() {
-	var hide = document.getElementById('Simulator');
-    var show = document.getElementById('Trade');
-        hide.style.display = 'none';
-        show.style.display = 'block';
-};
+	//Hide every window first
+	divStem.style.display = 'none';
+	divPara.style.display = 'none';
+	divSim.style.display = 'none';
+	divPopTrade.style.display = 'none';
+	divPopMarket.style.display = 'none';
 
-function hideTrade() {
-	var hide = document.getElementById('Trade');
-    var show = document.getElementById('Simulator');
-        hide.style.display = 'none';
-        show.style.display = 'block';
-};
+	//Show specific window
+	if (index == 0) {
+		divStem.style.display = 'block';
+	};
+	if (index == 1) {
+		divPara.style.display = 'block';
+	};
+	if (index == 2) {
+		divSim.style.display = 'block';
+	};
+	if (index == 3) {
+		divPopTrade.style.display = 'block';
+	};
+	if (index == 4) {
+		divPopMarket.style.display = 'block';
+	};
 
-function showPortfolios() {
-	var hide = document.getElementById('Simulator');
-    var show = document.getElementById('Stem');
-        hide.style.display = 'none';
-        show.style.display = 'block';
-};
-
-function showMarket() {
-	var hide = document.getElementById('Simulator');
-    var show = document.getElementById('Market');
-        hide.style.display = 'none';
-        show.style.display = 'block';
-};
-
-function hideMarket() {
-	var hide = document.getElementById('Market');
-    var show = document.getElementById('Simulator');
-        hide.style.display = 'none';
-        show.style.display = 'block';
-};
+}
 
