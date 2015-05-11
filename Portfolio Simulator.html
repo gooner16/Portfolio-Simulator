@@ -4,11 +4,12 @@
 <head>
 	<title>Portfolio Simulator</title>
 	<!-- Framework -->
-	<script type = "text/javascript" src = "vendors/stockrender-apprender.1.0.0.min.js"> </script>
+	<script type = "text/javascript" src = "vendors/stockrender-apprender.1.0.0.min.js"></script>
 	
 	<!-- Vendors script -->
 	<script type = "text/javascript" src = "vendors/autocomplete/currency-autocomplete.js"></script>
-	<script type = "text/javascript" src = "vendors\jscolor-1.4.4\jscolor\jscolor.js"></script>
+	<script type = "text/javascript" src = "vendors/jscolor-1.4.4/jscolor/jscolor.js"></script>
+	
 
 	<!-- Supplementary scripts -->
 	
@@ -100,9 +101,11 @@
 			</tr>
 
 			<tr>
+
 				<td colspan="1"> <button id = "startTrade" class="startTrade" onclick="showWindow(3)">+</button> </td>
 				<td colspan="2"> <button id = "viewPort" class="viewPort" width ="25px" onclick="showWindow(0)">View Portfolios </button> </td>
 				<td colspan="2"> <button id = "market" class="market" width ="25px" onclick="showWindow(4)"> Put on Market </button> </td>
+
 			</tr>
 
 		</table>
@@ -111,39 +114,37 @@
 
 	<!-- Popup windows -->
 	<!-- Make trade (Popup) -->
+
 	<div2 id = "Trade" style="float: left; display: block; position: fixed; left: 50px; top: 200px;">
 
 		<form>
+
 			
 			Stock:
 			<input type="text" name="stockName" value="Enter Ticker">
 			Amount:
 			<input type="text" name="amount" value="#">
 			<br><br>
+
 			<input type="button" value="Buy" onclick="showWindow(2)">
 			<input type="button" value="Sell" onclick="showWindow(2)">
-
 		</form>
-
+		
 	</div2>
 
 	<!-- Put on market place (Popup) -->
 	<div2 id = "Market" style="float: left; display: block; position: fixed; left: 500px; top: 200px;">
 
-		<form>
-			
 			Monthly Cost:
 			<input type="text" name="monthlyCost" value="Free">
 			<br><br>
+
 			<input type="button" value="Put on Market">
 			
 		</form>
 
 	</div2>
 
-<script type="text/javascript">
-
-</script>
-
 </body>
+
 </html>
