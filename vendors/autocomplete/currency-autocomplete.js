@@ -20,6 +20,23 @@ $(function autocomplete(){
       $("#autocomplete").focus();
     }
   });
-  
-
 });
+
+
+
+function determineTicker (input) {
+	var output = 2;
+	
+	if (input.length == 0 || input == "STOCK NAME") {
+		output = 0;
+	} else {	
+		for (i = 0; i < lengthOfResponse ; i++) {
+			
+			if (input == response[i].Ticker) {
+				output = 1;
+			}
+		}
+	}
+
+	return output;
+}
