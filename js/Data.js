@@ -6,7 +6,7 @@ var x1 = 0;
 //Create a new portfolio, used in "<!-- Set Parameters -->"
 function newPort () {
 	var portName = document.getElementById('portfolioName').value.trim();
-	var portCash = Number(document.getElementById('cash').value);
+	var portCash = Number(document.getElementById('cash').value).toFixed(2);
 	var portCommis =Number(document.getElementById('commission').value);
 
 	if (portName !== "" && portCash >= 0 && portCommis >= 0) {
