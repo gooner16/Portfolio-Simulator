@@ -37,8 +37,8 @@
 <body>
 
 	<!-- Main Window -->
-	<div1 id = "Stem" style = "float: left; display: block; position: fixed; left: 50px; top: 40px;">
-		<table id = "stem1" class = "stem1" cellspacing = "0" border = "1px" cellpadding = "4">
+	<div1 id="Stem" style = "float: left; display: block; position: fixed; left: 50px; top: 40px;">
+		<table id="stem1" class = "stem1" cellspacing = "0" border = "1px" cellpadding = "4">
 			<col width = "200px">
 			<col width = "200px">
 			<col width = "200px"> 
@@ -50,7 +50,7 @@
 		</tr>
 
 		<tr>
-			<td colspan="3"> <button id = "start" class="start" width ="25px" onclick="showWindow(1)"> + </button> </td>
+			<td colspan="3"> <button id="start" class="start" width ="25px" onclick="showWindow(1)"> + </button> </td>
 			
 		</tr>
 
@@ -59,35 +59,35 @@
 	</div1>
 
 	<!-- Set Parameters -->
-	<div2 id = "Parameters" style="float: left; display: block; position: fixed; left: 600px; top: 20px;">
+	<div2 id="Parameters" style="float: left; display: block; position: fixed; left: 600px; top: 20px;">
 		
 		<form >
 			
 			Portfolio Name:
-			<input type="text" name="portfolioName">
+			<input type="text" id="portfolioName">
 			<br><br>
 
 			Cash:
-			<input type="text" name="cash">
+			<input type="text" id="cash">
 			<br><br>
 
 			Commission:
-			<input type="text" name="commission">
+			<input type="text" id="commission">
 			<br><br>
 
-			<input type="radio" name="type" value="percent" id="percent">%
+			<input type="radio" id="type" value="percent" id="percent">%
 			
-			<input type="radio" name="type" value="fixed" id="fixed">Fixed
+			<input type="radio" id="type" value="fixed" id="fixed">Fixed
 			<br><br>
 
-			<input type="button" value="Next" onclick="showWindow(2)">
+			<input type="button" value="Next" onclick="newPort()">
 		</form>
 
 	</div2>
 
 	<!-- Portfolio Simulator -->
-	<div1 id = "Simulator" style = "float: left; display: block; position: fixed; left: 850px; top: 60px;">
-		<table id = "sim1" class = "sim1" cellspacing = "0" border = "1px" cellpadding = "4">
+	<div1 id="Simulator" style = "float: left; display: block; position: fixed; left: 850px; top: 60px;">
+		<table id="sim1" class = "sim1" cellspacing = "0" border = "1px" cellpadding = "4">
 				<col width = "200px">
 				<col width = "200px">
 				<col width = "200px"> 
@@ -102,9 +102,9 @@
 
 			<tr>
 
-				<td colspan="1"> <button id = "startTrade" class="startTrade" onclick="showWindow(3)">+</button> </td>
-				<td colspan="2"> <button id = "viewPort" class="viewPort" width ="25px" onclick="showWindow(0)">View Portfolios </button> </td>
-				<td colspan="2"> <button id = "market" class="market" width ="25px" onclick="showWindow(4)"> Put on Market </button> </td>
+				<td colspan="1"> <button id="startTrade" class="startTrade" onclick="showWindow(3)">+</button> </td>
+				<td colspan="2"> <button id="viewPort" class="viewPort" width ="25px" onclick="showWindow(0)">View Portfolios </button> </td>
+				<td colspan="2"> <button id="market" class="market" width ="25px" onclick="showWindow(4)"> Put on Market </button> </td>
 
 			</tr>
 
@@ -115,28 +115,28 @@
 	<!-- Popup windows -->
 	<!-- Make trade (Popup) -->
 
-	<div2 id = "Trade" style="float: left; display: block; position: fixed; left: 50px; top: 200px;">
+	<div2 id="Trade" style="float: left; display: block; position: fixed; left: 50px; top: 200px;">
 
 		<form>
 
 			
 			Stock:
-			<input type="text" name="stockName" value="Enter Ticker">
+			<input type="text" id="stockName" value="Enter Ticker">
 			Amount:
-			<input type="text" name="amount" value="#">
+			<input type="text" id="amount" value="#">
 			<br><br>
 
 			<input type="button" value="Buy" onclick="showWindow(2)">
 			<input type="button" value="Sell" onclick="showWindow(2)">
 		</form>
-		
+
 	</div2>
 
 	<!-- Put on market place (Popup) -->
-	<div2 id = "Market" style="float: left; display: block; position: fixed; left: 500px; top: 200px;">
+	<div2 id="Market" style="float: left; display: block; position: fixed; left: 500px; top: 200px;">
 
 			Monthly Cost:
-			<input type="text" name="monthlyCost" value="Free">
+			<input type="text" id="monthlyCost" value="Free">
 			<br><br>
 
 			<input type="button" value="Put on Market">

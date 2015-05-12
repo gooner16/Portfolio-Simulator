@@ -32,6 +32,5 @@ function showWindow(index) {
 	if (index == 4) {
 		divPopMarket.style.display = 'block';
 	};
-
 }
 
