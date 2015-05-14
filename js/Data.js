@@ -25,6 +25,9 @@ function newPort () {
 			Port0.commis = (portCommis / 100).toFixed(3);
 		}
 
+		addRow(0, Port0.name);
+		addRow(1, Port0.cash);
+
 		showWindow(2);	
 	}
 
