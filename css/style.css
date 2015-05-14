@@ -17,6 +17,13 @@ div2 {
 	padding: 10px;
 }
 
+button1 {
+	background: green;
+}
+
+button2 {
+	background: red;
+}
 button.start {
 	background:none;
 	border:none;
@@ -25,3 +32,4 @@ button.startTrade {
 	background:none;
 	border:none;
 }
+
