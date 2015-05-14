@@ -2,6 +2,7 @@
 /*(save data and functions)*/
 
 var x1 = 0;
+var Port0 = new Object();
 
 //Create a new portfolio, used in "<!-- Set Parameters -->"
 function newPort () {
@@ -11,7 +12,7 @@ function newPort () {
 
 	if (portName !== "" && portCash >= 0 && portCommis >= 0) {
 		
-		var Port0 = new Object();
+		
 
 		Port0.name = portName;
 		Port0.cash = portCash;
@@ -23,15 +24,6 @@ function newPort () {
 		if (document.getElementById('percent').checked) {
 			Port0.commis = (portCommis / 100).toFixed(3);
 		}
-
-		//Change name of Port
-		x1++;	//Increment for every object
-		Port0.id = ('Port' + x1);
-
-		AddRowFunction_Stem();
-
-
-
 
 		showWindow(2);	
 	}

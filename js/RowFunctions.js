@@ -1,6 +1,6 @@
 'use strict';
 
-var rowLength = 3;
+var rowLength = 1;
 
 function addRow(ind) {
 

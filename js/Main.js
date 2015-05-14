@@ -1,6 +1,8 @@
 'use strict';
 var validTicker = 0
-var fundata = new Array()
+var currentPrice;
+var lastPrice;
+var change;
 
 StockRender.AppRender.register({
 	id: "49e90eee6ce1942a94136fc8db19319c",
@@ -43,7 +45,6 @@ StockRender.AppRender.register({
 		
 	$('#autocomplete').keypress(function(e) {
 		if( e.which === 13 ) {
-			fundata = new Array();
 
 			//Local variable "input"
 			var input = document.getElementById("autocomplete");
@@ -127,11 +128,18 @@ function Runner () {}
 	    AppData.v1.pricedata.GET(stockId)
 	    .then(function(data){
 
+	    	console.log(data)
+
 	        currentPrice = data.response.data.slice(0,1)[0][1];
 	        lastPrice = data.response.data.slice(1,2)[0][1];
 
+	        console.log(currentPrice)
+	        console.log(lastPrice)
+
 	        change = ((currentPrice - lastPrice) / currentPrice ) * 100;
 	        change = change.toFixed(2) + "%";
+
+	        console.log(change)
 
 	    }, function(jqXHR){
 	        throw new Error('Failed to load data!',jqXHR);
