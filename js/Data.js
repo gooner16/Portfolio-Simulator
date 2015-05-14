@@ -28,7 +28,7 @@ function newPort () {
 		x1++;	//Increment for every object
 		Port0.id = ('Port' + x1);
 
-
+		AddRowFunction_Stem();
 
 
 

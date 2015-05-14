@@ -1,17 +1,16 @@
 //'use strict';
-var rowLength = 3;
-var y = 0;
-var arrayExe = [true];
+/*var rowLength = 3;*/
+/*var y = 0;*/
+/*var arrayExe = [true];*/
 
-var array = ["Assets","Book Value","Capital Expenditures","Cash","Cost of Good Sold","DPS","EPS Base","Float Shares","Good Will","Income After Tax","Income Before Tax","Institutional Own","Inventory","Liability","Long Term Debt","Net Income","Number of Employees","Operating Income","Revenue","Short Term Debt","Total Operating Expense"];
+/*var array = ["Assets","Book Value","Capital Expenditures","Cash","Cost of Good Sold","DPS","EPS Base","Float Shares","Good Will","Income After Tax","Income Before Tax","Institutional Own","Inventory","Liability","Long Term Debt","Net Income","Number of Employees","Operating Income","Revenue","Short Term Debt","Total Operating Expense"];
 //"EPS Diluted","Operating Cash Flow",
-//Number of times either of the functions has been executed
+//Number of times either of the functions has been executed*/
 
+function AddRowFunction_Stem() {
 
-function AddRowFunction() {
-
-	Name =$ ('#autocomplete')[0].value;
-	var yourSelect = document.getElementById( "selectBox" );
+	/*Name =$ ('#autocomplete')[0].value;
+	var yourSelect = document.getElementById( "selectBox" );*/
 	
 	if (validTicker == 1) {
 		var option = document.createElement("option");
