@@ -28,10 +28,8 @@ function newPort () {
 		x1++;	//Increment for every object
 		Port0.id = ('Port' + x1);
 
-		AddRowFunction_Stem();
-
-
-
+		addRow(0, Port0.name);
+		addRow(1, Port0.cash);
 
 		showWindow(2);	
 	}
