@@ -29,6 +29,8 @@
 
 		<script type = "text/javascript" src = "js/EnterStock.js"></script>
 
+		<script type = "text/javascript" src = "js/RowFunctions.js"></script>
+
 	<!-- jquery -->
 	
 	<!-- CSS -->
@@ -83,7 +85,7 @@
 			<input type="radio" name="type" value="fixed" id="fixed">Fixed
 			<br><br>
 
-			<input type="button" value="Next" onclick="newPort()">
+			<input type="button" value="Next" onclick="newPort();addRow(0);">
 		</form>
 
 	</div2>
@@ -122,15 +124,15 @@
 
 		<form>
 
-			
 			Stock:
 			<input type="text" value="Enter Ticker" id = "autocomplete" onfocus="if (this.value=='Enter Ticker') this.value='';" onblur="if (this.value=='') this.value='Enter Ticker';">
 			Amount:
 			<input type="text" name="amount" id = "amount" value="#" onfocus="if (this.value=='#') this.value='';" onblur="if (this.value=='') this.value='#';">
 			<br><br>
 
-			<input type="button" value="Buy" onclick="showWindow(2);buyStock(x1);">
+			<input type="button" value="Buy" onclick="showWindow(2);buyStock(x1);addRow(1);">
 			<input type="button" value="Sell" onclick="showWindow(2);sellStock(x1);">
+			
 		</form>
 
 	</div2>
