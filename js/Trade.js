@@ -1,28 +1,28 @@
 'use strict';
 
-function buyStock (ind) {
+function buyStock () {
 
-	var amount = document.getElementById("amount"); //get amount input
+	var amount = Number(document.getElementById("amount").value); //get amount input
 
 	//Transaction calculations
 
-	if (Port0.commis > 1) {
+	if (Port0.commis > 1) { //for fixed commission
 		var buyPrice = (currentPrice * amount) + Port0.commis;
-	}else{
-		var buyPrice = (currentPrice * amount) + (Port0.commission(currentPrice * amount));
+	}else{					//for percent commission
+		var buyPrice = (currentPrice * amount) + (Port0.commission*(currentPrice * amount));
 	};
 	
+	console.log("Buy Price: " + buyPrice)
+
 	Port0.cash = Port0.cash - buyPrice;
 
-	console.log(Port0.cash)
+	console.log("Total Cash: " + Port0.cash)
 
 }
 
-function sellStock (ind) {
+function sellStock () {
 	
 	var amount = document.getElementById("amount"); //get amount input
-	var portId = "Port" + ind						//get current portfolio id
-	var port = document.getElementById(portId)
 
 //Transaction calculations
 
@@ -36,3 +36,11 @@ function sellStock (ind) {
 	port.cash = port.cash + sellPrice;
 
 } 
+
+function sellAll () {
+	// body...
+}
+
+function shortSell () {
+	// body...
+}

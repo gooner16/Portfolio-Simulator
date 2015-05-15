@@ -7,7 +7,7 @@ var Port0 = new Object();
 //Create a new portfolio, used in "<!-- Set Parameters -->"
 function newPort () {
 	var portName = document.getElementById('portfolioName').value.trim();
-	var portCash = Number(document.getElementById('cash').value).toFixed(2);
+	var portCash = Number(document.getElementById('cash').value);
 	var portCommis =Number(document.getElementById('commission').value);
 
 	if (portName !== "" && portCash >= 0 && portCommis >= 0) {
@@ -19,10 +19,10 @@ function newPort () {
 
 		//Radio button selection
 		if (document.getElementById('fixed').checked) {
-			Port0.commis = portCommis.toFixed(2);
+			Port0.commis = portCommis;
 		} 
 		if (document.getElementById('percent').checked) {
-			Port0.commis = (portCommis / 100).toFixed(3);
+			Port0.commis = (portCommis / 100);
 		}
 
 		addRow(0, Port0.name);
