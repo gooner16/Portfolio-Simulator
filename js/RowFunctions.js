@@ -3,7 +3,7 @@
 
 var rowLength1 = 2;
 
-function addRow(ind,text) {
+function addRow(ind,text,value) {
 
 	if (ind == 0) { //0 for adding to Stem
 
@@ -22,7 +22,7 @@ function addRow(ind,text) {
 		cell4.innerHTML = '<input type = "button" value = "X" onclick = "deleteRow(0, this)">';
 	};
 
-	if (ind == 1) { //1 for adding to Simulator
+	if (ind == 1) { //1 for adding cash to Simulator
 		
 		var table = document.getElementById("sim1");
 		var rowLength = table.rows.length;
@@ -37,6 +37,24 @@ function addRow(ind,text) {
 		cell2.innerHTML = "$" + text;
 		cell3.innerHTML = "[Change]";
 		cell4.innerHTML = ""
+	};
+
+	if (ind == 2) { //2 for adding stock to Simulator
+		
+		var table = document.getElementById("sim1");
+		var rowLength = table.rows.length;
+
+		var row = table.insertRow(rowLength - 2);
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+		var cell3 = row.insertCell(2);
+		var cell4 = row.insertCell(3);
+
+		cell1.innerHTML = text;
+		cell2.innerHTML = "$" + value;
+		cell3.innerHTML = "[Change]";
+		cell4.innerHTML = ""
+
 	};
 
 	//Settings_all(); //Change text size

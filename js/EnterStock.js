@@ -2,7 +2,9 @@
 
 window.onload = function() {
 
+	//inputs in trade window
 	input = document.getElementById("autocomplete");
+	input2 = document.getElementById("amount");
 	
 	input.onkeypress = function(event) {
 		
@@ -19,7 +21,7 @@ window.onload = function() {
 			if (validTicker == 1) {	
 
 				document.getElementById("autocomplete").blur();
-				input.value=input.value.toUpperCase();
+				input.value = input.value.toUpperCase();
 				document.getElementById("alertStock").innerHTML = "";
 			}
 			// If input is invalid
@@ -27,6 +29,23 @@ window.onload = function() {
 
 				document.getElementById("alertStock").innerHTML = "Please enter a valid stock ticker.";
 				//This shows up when it's empty or invalid stock ticker
+			}
+		}
+	}
+
+	input2.onkeypress = function(event) {
+		
+		if (event.keyCode == 13) {
+
+			// If input is is a number
+			if (input2.value/1 == input2.value) {
+
+				document.getElementById("amount").blur();
+				document.getElementById("alertStock").innerHTML = "";
+
+			}else{ //If input is NAN
+
+				document.getElementById("alertStock").innerHTML = "Enter a number";
 			}
 		}
 	}

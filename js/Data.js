@@ -1,7 +1,5 @@
 'use strict';
-/*(save data and functions)*/
 
-var x1 = 0;
 var Port0 = new Object();
 
 //Create a new portfolio, used in "<!-- Set Parameters -->"
@@ -12,8 +10,6 @@ function newPort () {
 
 	if (portName !== "" && portCash >= 0 && portCommis >= 0) {
 		
-		
-
 		Port0.name = portName;
 		Port0.cash = portCash;
 
@@ -34,7 +30,6 @@ function newPort () {
 	console.log (Port0.name);
 	console.log (Port0.cash);
 	console.log (Port0.commis);
-	console.log (Port0.id);
 }
 
 
