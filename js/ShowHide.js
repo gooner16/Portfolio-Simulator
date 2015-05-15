@@ -8,6 +8,7 @@ function showWindow(index) {
 	var divSim = document.getElementById('Simulator');
 	var divPopTrade = document.getElementById('Trade');
 	var divPopMarket = document.getElementById('Market');
+	var divSell = document.getElementById('Sell');
 
 	//Hide every window first
 	/*divStem.style.display = 'none';*/
@@ -15,6 +16,7 @@ function showWindow(index) {
 	divSim.style.display = 'none';
 	divPopTrade.style.display = 'none';
 	divPopMarket.style.display = 'none';
+	divSell.style.display = 'none';
 
 	//Show specific window
 	if (index == 0) {
@@ -31,5 +33,8 @@ function showWindow(index) {
 	};
 	if (index == 4) {
 		divPopMarket.style.display = 'block';
+	};
+	if (index == 5) {
+		divSell.style.display = 'block';
 	};
 }

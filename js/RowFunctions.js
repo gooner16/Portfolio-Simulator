@@ -3,7 +3,7 @@
 
 var rowLength1 = 2;
 
-function addRow(ind,text,value) {
+function addRow(ind,text,value,amount) {
 
 	if (ind == 0) { //0 for adding to Stem
 
@@ -49,11 +49,18 @@ function addRow(ind,text,value) {
 		var cell2 = row.insertCell(1);
 		var cell3 = row.insertCell(2);
 		var cell4 = row.insertCell(3);
+		var cell5 = row.insertCell(4);
 
 		cell1.innerHTML = text;
 		cell2.innerHTML = "$" + value;
-		cell3.innerHTML = "[Change]";
+		cell3.innerHTML = amount;
 		cell4.innerHTML = ""
+
+		if (x==1) {
+			cell5.innerHTML = '<input type = "button" value = "Sell" onclick = "showWindow(5)">'
+		}else{
+			cell5.innerHTML = '<input type = "button" value = "Buy" onclick = "">'
+		};
 
 	};
 

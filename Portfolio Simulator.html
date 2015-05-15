@@ -101,7 +101,7 @@
 			<tr>
 				<td> Stock </td>
 				<td> Value </td>
-				<td> % Change </td>
+				<td> Amount </td>
 				<td> % Portfolio </td>
 			</tr>
 
@@ -133,7 +133,26 @@
 			<br><br>
 
 			<input type="button" value="Buy" onclick="showWindow(2);buyStock();">
-			<input type="button" value="Sell" onclick="showWindow(2);sellStock();">
+			<input type="button" value="Sell" onclick="showWindow(2);sellShort();">
+			
+		</form>
+
+	</div2>
+
+	<!-- Make Sale (Popup) -->
+
+	<div2 id="Sell" style="float: left; display: block; position: fixed; left: 50px; top: 300px;">
+
+		<form>
+
+			Stock:
+			<input type="text" value="Enter Ticker" id = "autocomplete" onfocus="if (this.value=='Enter Ticker') this.value='';" onblur="if (this.value=='') this.value='Enter Ticker';">
+			Amount:
+			<input type="text" name="amount" id = "amount" value="#" onfocus="if (this.value=='#') this.value='';" onblur="if (this.value=='') this.value='#';">
+			<br><br>
+
+			<input type="button" value="Sell All" onclick="showWindow(2);">
+			<input type="button" value="Sell Amount" onclick="showWindow(2);shortSell();">
 			
 		</form>
 

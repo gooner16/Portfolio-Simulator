@@ -1,5 +1,7 @@
 'use strict';
 
+var x;
+
 function buyStock () { //when buying stock in the trade window
 
 	var amount = Number(document.getElementById("amount").value); //get amount input
@@ -18,11 +20,13 @@ function buyStock () { //when buying stock in the trade window
 
 	console.log("Total Cash: " + Port0.cash) //Cash left
 
+	x = 1; //1 is a buy transaction
+
 	//Add transaction to table
-	addRow(2, (document.getElementById("autocomplete").value).toUpperCase(), (currentPrice * amount));
+	addRow(2, (document.getElementById("autocomplete").value).toUpperCase(), (currentPrice * amount), amount);
 	//Update remaining cash
 	updateCash();
-
+	
 }
 
 function sellStock () { //when selling part of a transaction from the simulator
