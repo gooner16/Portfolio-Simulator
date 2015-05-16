@@ -40,6 +40,7 @@ function buyStock () { //when buying stock in the trade window
 }
 
 function sellAmount () { 
+	//function for selling stocks
 	var rowIndex = Number(document.getElementById("rowIndex").innerHTML)
 	var tempTicker = document.getElementById("sim1").getElementsByTagName("tr")[rowIndex].getElementsByTagName("td")[0].innerHTML
 	var priceAllStocks = document.getElementById("sim1").getElementsByTagName("tr")[rowIndex].getElementsByTagName("td")[1].innerHTML 
