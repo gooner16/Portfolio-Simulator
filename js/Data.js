@@ -8,28 +8,34 @@ function newPort () {
 	var portCash = Number(document.getElementById('cash').value);
 	var portCommis =Number(document.getElementById('commission').value);
 
-	if (portName !== "" && portCash >= 0 && portCommis >= 0) {
-		
-		Port0.name = portName;
-		Port0.cash = portCash;
 
-		//Radio button selection
-		if (document.getElementById('fixed').checked) {
-			Port0.commis = portCommis;
-		} 
-		if (document.getElementById('percent').checked) {
-			Port0.commis = (portCommis / 100);
+	if(isNaN(portCash)|| isNaN(portCommis)){
+		alert("Please input a numerical value for Cash and Commission")
+	}else{
+
+		if (portName !== "" && portCash >= 0 && portCommis >= 0) {
+			
+			Port0.name = portName;
+			Port0.cash = portCash;
+
+			//Radio button selection
+			if (document.getElementById('fixed').checked) {
+				Port0.commis = portCommis;
+			} 
+			if (document.getElementById('percent').checked) {
+				Port0.commis = (portCommis / 100);
+			}
+
+			addRow(0, Port0.name);
+			addRow(1, Port0.cash);
+
+			showWindow(2);	
 		}
 
-		addRow(0, Port0.name);
-		addRow(1, Port0.cash);
-
-		showWindow(2);	
+		console.log (Port0.name);
+		console.log (Port0.cash);
+		console.log (Port0.commis);
 	}
-
-	console.log (Port0.name);
-	console.log (Port0.cash);
-	console.log (Port0.commis);
 }
 
 
