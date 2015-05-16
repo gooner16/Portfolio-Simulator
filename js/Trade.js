@@ -23,17 +23,20 @@ function buyStock () { //when buying stock in the trade window
 	
 	console.log("Buy Price: " + buyPrice)  //Total amount spent
 
-	Port0.cash = Port0.cash - buyPrice;
+	if((Port0.cash - buyPrice) >=0){
+		Port0.cash = Port0.cash - buyPrice;
 
-	console.log("Total Cash: " + Port0.cash) //Cash left
+		console.log("Total Cash: " + Port0.cash) //Cash left
 
-	x = 1; //1 is a buy transaction
+		x = 1; //1 is a buy transaction
 
-	//Add transaction to table
-	addRow(2, (document.getElementById("autocomplete").value).toUpperCase(), (currentPrice * amount), amount);
-	//Update remaining cash
-	updateCash();
-	
+		//Add transaction to table
+		addRow(2, (document.getElementById("autocomplete").value).toUpperCase(), (currentPrice * amount), amount);
+		//Update remaining cash
+		updateCash();
+	}else{
+		alert("You do not have enough money")
+	}
 }
 
 function sellAmount () { 
@@ -45,6 +48,7 @@ function sellAmount () {
 	var priceOfSingleStock = priceAllStocks / amount
 	var amountSelling = document.getElementById("amountSell").value
 
+if( amount - amountSelling>= 0){
 	if (Port0.commis > 1) {
 		var sellPrice = (priceOfSingleStock * amountSelling) - Port0.commis;
 	}else{
@@ -64,6 +68,9 @@ function sellAmount () {
 	document.getElementById("sim1").deleteRow(rowIndex)
 	}
 	updateCash()
+}else{
+	alert("You can not sell more stocks then you own")
+}
 }
 
 function sellAll () { //when selling an entire transaction from the simulator
