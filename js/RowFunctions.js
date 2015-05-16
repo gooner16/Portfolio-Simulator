@@ -57,7 +57,8 @@ function addRow(ind,text,value,amount) {
 		cell4.innerHTML = ""
 
 		if (x==1) {
-			cell5.innerHTML = '<input type = "button" value = "Sell" onclick = "showWindow(5)">'
+			cell5.innerHTML = '<input type = "button" id = "hello" value = "Sell" onclick = "showWindow(5);selling(this)">'
+			document.getElementById("hello").id= rowLength - 2
 		}else{
 			cell5.innerHTML = '<input type = "button" value = "Buy" onclick = "">'
 		};

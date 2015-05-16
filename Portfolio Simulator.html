@@ -111,6 +111,7 @@
 				<button id="startTrade" class="startTrade" onclick="showWindow(3)">+</button>
 				<button id="viewPort" class="viewPort" width ="25px" onclick="showWindow(0)">View Portfolios </button>
 				<button id="market" class="market" width ="25px" onclick="showWindow(4)"> Put on Market </button>
+				<button id="update" class="update" width ="25px" onclick="updatePrice()"> update </button>
 				</td>
 
 			</tr>
@@ -144,14 +145,14 @@
 	<div2 id="Sell" style="float: left; display: block; position: fixed; left: 50px; top: 300px;">
 
 		<form>
+			<p id="rowIndex" style = "display: none"> </p>
 
-			Stock:
-			<input type="text" value="Enter Ticker" id = "autocomplete" onfocus="if (this.value=='Enter Ticker') this.value='';" onblur="if (this.value=='') this.value='Enter Ticker';">
+			<p id="stockBeingSold" > </p>
 			Amount:
-			<input type="text" name="amount" id = "amount" value="#" onfocus="if (this.value=='#') this.value='';" onblur="if (this.value=='') this.value='#';">
+			<input type="text" name="amount" id = "amountSell" value="#" onfocus="if (this.value=='#') this.value='';" onblur="if (this.value=='') this.value='#';">
 			<br><br>
 
-			<input type="button" value="Sell All" onclick="showWindow(2);">
+			<input type="button" value="Sell All" onclick="showWindow(2);sellAmount()">
 			<input type="button" value="Sell Amount" onclick="showWindow(2);shortSell();">
 			
 		</form>
