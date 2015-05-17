@@ -14,28 +14,31 @@ function buyStock () { //when buying stock in the trade window
 	var amount = Number(document.getElementById("amount").value); //get amount input
 
 	//Transaction calculations
-
-	if (Port0.commis > 1) { //for fixed commission
-		var buyPrice = (currentPrice * amount) + Port0.commis;
-	}else{					//for percent commission
-		var buyPrice = (currentPrice * amount) + (Port0.commis*(currentPrice * amount));
-	};
-	
-	console.log("Buy Price: " + buyPrice)  //Total amount spent
-
-	if((Port0.cash - buyPrice) >=0){
-		Port0.cash = Port0.cash - buyPrice;
-
-		console.log("Total Cash: " + Port0.cash) //Cash left
-
-		x = 1; //1 is a buy transaction
-
-		//Add transaction to table
-		addRow(2, (document.getElementById("autocomplete").value).toUpperCase(), (currentPrice * amount), amount);
-		//Update remaining cash
-		updateCash();
+	if(amount == 0 || isNaN(amount)){
+		alert("Please enter the number of Stock you would like to buy")
 	}else{
-		alert("You do not have enough money")
+		if (Port0.commis > 1) { //for fixed commission
+			var buyPrice = (currentPrice * amount) + Port0.commis;
+		}else{					//for percent commission
+			var buyPrice = (currentPrice * amount) + (Port0.commis*(currentPrice * amount));
+		};
+		
+		console.log("Buy Price: " + buyPrice)  //Total amount spent
+
+		if((Port0.cash - buyPrice) >=0){
+			Port0.cash = Port0.cash - buyPrice;
+
+			console.log("Total Cash: " + Port0.cash) //Cash left
+
+			x = 1; //1 is a buy transaction
+
+			//Add transaction to table
+			addRow(2, (document.getElementById("autocomplete").value).toUpperCase(), (currentPrice * amount), amount);
+			//Update remaining cash
+			updateCash();
+		}else{
+			alert("You do not have enough money")
+		}
 	}
 }
 

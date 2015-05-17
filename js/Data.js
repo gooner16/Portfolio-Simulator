@@ -9,8 +9,26 @@ function newPort () {
 	var portCommis =Number(document.getElementById('commission').value);
 
 
-	if(isNaN(portCash)|| isNaN(portCommis)){
-		alert("Please input a numerical value for Cash and Commission")
+	if(isNaN(portCash)|| isNaN(portCommis) || portCommis==0||portCash==0||portName=="" ){
+
+		if(portCommis==0 && portCash==0 && portName==""){
+			alert("Please fill out the form")
+		}else if(isNaN(portCash) && isNaN(portCommis)){
+			alert("Please input a numerical value for Cash and Commission")
+		}else if (isNaN(portCash)){
+			alert("Please input a numerical value for Cash")
+		}else if (isNaN(portCommis)){
+			alert("Please input a numerical value for Commission")
+		} else if(portName==""){
+			alert("Please input a Portfolio Name")
+		}else if(portCommis == 0){
+			alert("Please input a value for Commission")
+		}else if(portCash == 0){
+			alert("Please input a value for Cash")
+		}
+		
+	}else if( document.getElementById('fixed').checked== false && document.getElementById('percent').checked==false){
+		alert("Please select a form of commission")
 	}else{
 
 		if (portName !== "" && portCash >= 0 && portCommis >= 0) {
