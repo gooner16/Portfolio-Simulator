@@ -11,7 +11,7 @@ function showWindow(index) {
 	var divSell = document.getElementById('Sell');
 
 	//Hide every window first
-	/*divStem.style.display = 'none';*/
+	divStem.style.display = 'none';
 	divPara.style.display = 'none';
 	divSim.style.display = 'none';
 	divPopTrade.style.display = 'none';

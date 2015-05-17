@@ -49,29 +49,30 @@ function sellAmount () {
 	var priceOfSingleStock = priceAllStocks / amount
 	var amountSelling = document.getElementById("amountSell").value
 
-if( amount - amountSelling>= 0){
-	if (Port0.commis > 1) {
-		var sellPrice = (priceOfSingleStock * amountSelling) - Port0.commis;
+	if( amount - amountSelling >= 0){
+
+		if (Port0.commis > 1) {
+			var sellPrice = (priceOfSingleStock * amountSelling) - Port0.commis;
+		}else{
+			var sellPrice = (priceOfSingleStock * amountSelling) - (Port0.commis*(priceOfSingleStock * amountSelling));
+		};
+
+		console.log("Sell Price: " + sellPrice)
+
+		Port0.cash = Port0.cash + sellPrice;
+
+		console.log("Total Cash: " + Port0.cash)
+
+		document.getElementById("sim1").getElementsByTagName("tr")[rowIndex].getElementsByTagName("td")[2].innerHTML = amount - amountSelling
+		document.getElementById("sim1").getElementsByTagName("tr")[rowIndex].getElementsByTagName("td")[1].innerHTML = '$' + priceOfSingleStock * (amount - amountSelling)
+
+		if(amount - amountSelling ===0){
+		document.getElementById("sim1").deleteRow(rowIndex)
+		}
+		updateCash();
 	}else{
-		var sellPrice = (priceOfSingleStock * amountSelling) - (Port0.commis*(priceOfSingleStock * amountSelling));
-	};
-
-	console.log("Sell Price: " + sellPrice)
-
-	Port0.cash = Port0.cash + sellPrice;
-
-	console.log("Total Cash: " + Port0.cash)
-
-	document.getElementById("sim1").getElementsByTagName("tr")[rowIndex].getElementsByTagName("td")[2].innerHTML = amount - amountSelling
-	document.getElementById("sim1").getElementsByTagName("tr")[rowIndex].getElementsByTagName("td")[1].innerHTML = '$' + priceOfSingleStock * (amount - amountSelling)
-
-	if(amount - amountSelling ===0){
-	document.getElementById("sim1").deleteRow(rowIndex)
+		alert("You can not sell more stocks then you own")
 	}
-	updateCash()
-}else{
-	alert("You can not sell more stocks then you own")
-}
 }
 
 function sellAll () { //when selling an entire transaction from the simulator
@@ -101,65 +102,63 @@ function updatePrice(){
 	 var temptick = document.getElementById("sim1").getElementsByTagName("tr")[i].getElementsByTagName("td")[0].innerHTML
 
 	
-var ek
+	var ek
 
 
-StockRender.AppRender.register({
-	id: "49e90eee6ce1942a94136fc8db19319c",
-	name: "Tables",
-	version: "1.0.0",
-	defaults: {
-		terminal: {
-			x: 0,
-			y: 0,
-			w: 100,
-			h: 100
-		}
-	},
-	beforeRender: function () {
-		console.log('running beforeRender!');
-	},
-	ready: function(AppMemory, AppData) {
-		/*Defining Variables*/
-		var last_input;
+	StockRender.AppRender.register({
+		id: "49e90eee6ce1942a94136fc8db19319c",
+		name: "Tables",
+		version: "1.0.0",
+		defaults: {
+			terminal: {
+				x: 0,
+				y: 0,
+				w: 100,
+				h: 100
+			}
+		},
+		beforeRender: function () {
+			console.log('running beforeRender!');
+		},
+		ready: function(AppMemory, AppData) {
+			/*Defining Variables*/
+			var last_input;
 
-		/*Reading User-Data*/
-		AppMemory.read('last_input')
-			.success(function(data) {
-				if(!data) {
-					AppMemory.write('last_input','A');
-					last_input = 'A';
-				} else {
-					last_input = data;
-				}
-			})
-			.error(function(err, data) {
-				if(err) {
-					console.log('AppMemory not retrieved',data);
-					AppMemory.write('last_input','A');
-					last_input = 'A';
-				}
-			})
+			/*Reading User-Data*/
+			AppMemory.read('last_input')
+				.success(function(data) {
+					if(!data) {
+						AppMemory.write('last_input','A');
+						last_input = 'A';
+					} else {
+						last_input = data;
+					}
+				})
+				.error(function(err, data) {
+					if(err) {
+						console.log('AppMemory not retrieved',data);
+						AppMemory.write('last_input','A');
+						last_input = 'A';
+					}
+				})
 
-				 AppData.v1.pricedata.GET(temptick)
-    .then(function(data){
+					 AppData.v1.pricedata.GET(temptick)
+	    .then(function(data){
 
-    
+	    
 
-         ek = data.response.data.slice(0,1)[0][1];
-         tableData.push({"label": temptick, "val": ek})
-       
-        console.log(tableData)
+	         ek = data.response.data.slice(0,1)[0][1];
+	         tableData.push({"label": temptick, "val": ek})
+	       
+	        console.log(tableData)
 
-    })
-		
+	    })
+			
 
-	} 
-})
+		} 
+	})
 
-})(i);
-
-
+	})(i);
 
 function fillinginvalue(){
 	alert("working")
