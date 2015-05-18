@@ -82,10 +82,12 @@ StockRender.AppRender.register({
 		if (settingsShown == false) {
 			settingsShown = true;
 			$("#settings").show();
+			$("#body").hide();
 			//$("#table1").hide();
 			} else {
 			settingsShown = false;
 			$("#settings").hide();
+			$("#body").show();
 			//$("#table1").show();
 			
 			//Change of text size
@@ -116,9 +118,8 @@ StockRender.AppRender.register({
 			//Upon confirming settings changes
 			Settings_all();
 		}
-		console.log('settingsShown', settingsShown);
 	})
-	} //from the else	
+	}
 })
 
 /////////////////////////////////////RUNNER///////////////////////////////////////////

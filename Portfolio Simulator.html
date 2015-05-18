@@ -26,10 +26,11 @@
 
 		<!-- Controls Program Flow -->
 		<script type = "text/javascript" src = "js/ShowHide.js"></script>
-
 		<script type = "text/javascript" src = "js/EnterStock.js"></script>
-
 		<script type = "text/javascript" src = "js/RowFunctions.js"></script>
+
+		<!-- Settings -->
+		<script type = "text/javascript" src = "js/Settings.js"></script>
 
 	<!-- jquery -->
 	
@@ -41,7 +42,7 @@
 <body>
 
 	<!-- Settings -->
-	<div1 id="settings" title="Settings">
+	<div2 id="settings" title="Settings">
 		<script> $("#settings").hide(); </script>
 
 		<label id = "lblText">Text Size: </label>
@@ -57,26 +58,29 @@
 		<input id = "inpText" type="number" min="5" max="30" step="1" value="16">
 		
 		
-	 </div1>
+	 </div2>
 	 
 	  <button id="opener">Settings</button>
 	<!-- Settings -->
 
+	<div id="body">
 	<!-- Main Window -->
-	<div1 id="Stem" style = "float: left; display: block; position: fixed; left: 400px; top: 40px;">
+	<div1 id="Stem" style = "display: block;">
 		<table id="stem1" class = "stem1" cellspacing = "0" border = "1px" cellpadding = "4">
 			<col width = "200px">
 			<col width = "200px">
 			<col width = "200px"> 
+			<col width = "50px">
 
 		<tr>
 			<td> Portfolio </td>
 			<td> % Change </td>
 			<td> Ranking </td>
+			<td> </td>
 		</tr>
 
 		<tr>
-			<td colspan="3"> <button id="start" class="start" width ="25px" onclick="showWindow(1)"> + </button> </td>
+			<td colspan="4"> <button id="start" class="start" width ="25px" onclick="showWindow(1)"> + </button> </td>
 			
 		</tr>
 
@@ -85,7 +89,7 @@
 	</div1>
 
 	<!-- Set Parameters -->
-	<div2 id="Parameters" style="float: left; display: block; position: fixed; left: 400px; top: 40px;">
+	<div2 id="Parameters" style="">
 		
 		<form >
 			
@@ -112,7 +116,7 @@
 	</div2>
 
 	<!-- Portfolio Simulator -->
-	<div1 id="Simulator" style = "float: left; display: block; position: fixed; left: 400px; top: 40px;">
+	<div1 id="Simulator" style = "display: block;">
 		
 		<table id="sim1" class = "sim1" cellspacing = "0" border = "1px" cellpadding = "4">
 				<col width = "200px">
@@ -145,7 +149,7 @@
 	<!-- Popup windows -->
 	<!-- Make trade (Popup) -->
 
-	<div2 id="Trade" style="float: left; display: block; position: fixed; left: 400px; top: 40px;">
+	<div2 id="Trade" style="display: block;">
 
 		<form>
 
@@ -167,7 +171,7 @@
 
 	<!-- Make Sale (Popup) -->
 
-	<div2 id="Sell" style="float: left; display: block ; position: fixed; left: 400px; top: 40px;">
+	<div2 id="Sell" style="display: block ;">
 		
 			<p id="rowIndex" style = "display: none"> </p>
 
@@ -186,7 +190,7 @@
 
 	<!-- Make Short Sale (Popup) -->
 
-	<div2 id="ShortSell" style="float: left; display: block ; position: fixed; left: 400px; top: 40px;">
+	<div2 id="ShortSell" style="display: block ;">
 		
 		<p id="rowIndex" style = "display: none"> </p>
 
@@ -205,7 +209,7 @@
 	</div2>
 
 	<!-- Put on market place (Popup) -->
-	<div2 id="Market" style="float: left; display: block; position: fixed; left: 400px; top: 40px;">
+	<div2 id="Market" style="display: block;">
 		
 			Monthly Cost:
 			<input type="text" name="monthlyCost" value="Free" onfocus="if (this.value=='Free') this.value='';" onblur="if (this.value=='') this.value='Free';">
@@ -215,9 +219,6 @@
 			<input type="button" value="Back" onclick="showWindow(2)">
 
 	</div2>
-
-	<div>
-		
 	</div>
 
 	<script type = "text/javascript">showWindow(0);</script>

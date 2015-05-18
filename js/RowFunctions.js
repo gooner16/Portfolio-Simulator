@@ -66,7 +66,8 @@ function addRow(ind,text,value,amount) {
 
 	};
 
-	//Settings_all(); //Change text size
+	/*//Apply settings
+	Settings_all();*/
 }
 
 //deletes current row
@@ -81,4 +82,7 @@ function deleteRow(ind, r) {
 		var i = r.parentNode.parentNode.rowIndex;
 		document.getElementById("sim1").deleteRow(i);
 	}
+
+	//Apply rowcolor
+	Settings_backgroundColor();
 }

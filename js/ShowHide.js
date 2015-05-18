@@ -42,4 +42,7 @@ function showWindow(index) {
 	if (index == 6) {
 		divShortSell.style.display = 'block';
 	};
+
+	//Apply settings
+	Settings_all ();
 }
