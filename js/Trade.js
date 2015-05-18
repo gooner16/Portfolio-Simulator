@@ -37,10 +37,21 @@ function buyStock () { //when buying stock in the trade window
 }
 
 function selling(me){
-
-	document.getElementById("rowIndex").innerHTML = me.id;
-	document.getElementById("stockBeingSold").innerHTML = "Stock: " + document.getElementById("sim1").getElementsByTagName("tr")[me.id].getElementsByTagName("td")[0].innerHTML;
-	document.getElementById("amountSell").value = document.getElementById("sim1").getElementsByTagName("tr")[me.id].getElementsByTagName("td")[2].innerHTML;
+	var numberOfRows = document.getElementById("sim1").getElementsByTagName("tr").length;
+	var rowNUmber;
+	for (var i = 0; i < numberOfRows; i++) {
+		if( document.getElementById("sim1").getElementsByTagName("tr")[i].getElementsByTagName("td")[4] != undefined){
+			if(document.getElementById("sim1").getElementsByTagName("tr")[i].getElementsByTagName("td")[4].getElementsByTagName("input")[0].id != undefined){
+				if( document.getElementById("sim1").getElementsByTagName("tr")[i].getElementsByTagName("td")[4].getElementsByTagName("input")[0].id == me.id){
+					rowNUmber = i;
+				};
+			};
+		};
+	};
+	document.getElementById("rowIndex").innerHTML = rowNUmber;
+	document.getElementById("stockBeingSold").innerHTML = "Stock: " + document.getElementById("sim1").getElementsByTagName("tr")[rowNUmber].getElementsByTagName("td")[0].innerHTML;
+	document.getElementById("amountSell").value = document.getElementById("sim1").getElementsByTagName("tr")[rowNUmber].getElementsByTagName("td")[2].innerHTML;
+	document.getElementById("currentValue").innerHTML = "Current Value: " + document.getElementById("sim1").getElementsByTagName("tr")[rowNUmber].getElementsByTagName("td")[1].innerHTML; 
 }
 
 function sellAmount () { 
@@ -83,11 +94,24 @@ function sellAmount () {
 
 function sellingShort(me){
 
-	document.getElementById("rowIndex").innerHTML = me.id;
-	document.getElementById("stockBeingSold2").innerHTML = "Stock: " + document.getElementById("sim1").getElementsByTagName("tr")[me.id].getElementsByTagName("td")[0].innerHTML;
-	document.getElementById("amountShort").innerHTML = "Amount: " + document.getElementById("sim1").getElementsByTagName("tr")[me.id].getElementsByTagName("td")[2].innerHTML;
-	document.getElementById("newValue").innerHTML = "Current Value: " + document.getElementById("sim1").getElementsByTagName("tr")[me.id].getElementsByTagName("td")[1].innerHTML; 
+	var numberOfRows = document.getElementById("sim1").getElementsByTagName("tr").length;
+	var rowNUmber;
+	for (var i = 0; i < numberOfRows; i++) {
+		if( document.getElementById("sim1").getElementsByTagName("tr")[i].getElementsByTagName("td")[4] != undefined){
+			if(document.getElementById("sim1").getElementsByTagName("tr")[i].getElementsByTagName("td")[4].getElementsByTagName("input")[0].id != undefined){
+				if( document.getElementById("sim1").getElementsByTagName("tr")[i].getElementsByTagName("td")[4].getElementsByTagName("input")[0].id == me.id){
+					rowNUmber = i;
+				};
+			};
+		};
+	};
+
+	document.getElementById("rowIndex").innerHTML = rowNUmber;
+	document.getElementById("stockBeingSold2").innerHTML = "Stock: " + document.getElementById("sim1").getElementsByTagName("tr")[rowNUmber].getElementsByTagName("td")[0].innerHTML;
+	document.getElementById("amountShort").innerHTML = "Amount: " + document.getElementById("sim1").getElementsByTagName("tr")[rowNUmber].getElementsByTagName("td")[2].innerHTML;
+	document.getElementById("newValue").innerHTML = "Current Value: " + document.getElementById("sim1").getElementsByTagName("tr")[rowNUmber].getElementsByTagName("td")[1].innerHTML; 
 	//document.getElementById("netDiff").innerHTML = "Net Gain/Loss: $" + (initialBuyValue - document.getElementById("sim1").getElementsByTagName("tr")[me.id].getElementsByTagName("td")[1].innerHTML);
+	
 }
 
 function shortSell () { //when using short sell 
