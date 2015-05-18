@@ -5,6 +5,7 @@ window.onload = function() {
 	//inputs in trade window
 	input = document.getElementById("autocomplete");
 	input2 = document.getElementById("amount");
+	input3 = document.getElementById("amountSell");
 	
 	input.onkeypress = function(event) {
 		
@@ -41,6 +42,23 @@ window.onload = function() {
 			if (input2.value/1 == input2.value) {
 
 				document.getElementById("amount").blur();
+				document.getElementById("alertStock").innerHTML = "";
+
+			}else{ //If input is NAN
+
+				document.getElementById("alertStock").innerHTML = "Enter a number";
+			}
+		}
+	}
+
+	input3.onkeypress = function(event) {
+		
+		if (event.keyCode == 13) {
+
+			// If input is is a number
+			if (input3.value/1 == input3.value) {
+
+				document.getElementById("amountSell").blur();
 				document.getElementById("alertStock").innerHTML = "";
 
 			}else{ //If input is NAN

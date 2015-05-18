@@ -1,13 +1,7 @@
 'use strict';
 
 var x;
-
-function selling(me){
-document.getElementById("rowIndex").innerHTML = me.id;
-document.getElementById("stockBeingSold").innerHTML = "Stock:" + document.getElementById("sim1").getElementsByTagName("tr")[me.id].getElementsByTagName("td")[0].innerHTML;
-document.getElementById("amountSell").value = document.getElementById("sim1").getElementsByTagName("tr")[me.id].getElementsByTagName("td")[2].innerHTML;
-
-}
+var shortSellPrice;
 
 function buyStock () { //when buying stock in the trade window
 
@@ -42,6 +36,13 @@ function buyStock () { //when buying stock in the trade window
 	}
 }
 
+function selling(me){
+
+	document.getElementById("rowIndex").innerHTML = me.id;
+	document.getElementById("stockBeingSold").innerHTML = "Stock: " + document.getElementById("sim1").getElementsByTagName("tr")[me.id].getElementsByTagName("td")[0].innerHTML;
+	document.getElementById("amountSell").value = document.getElementById("sim1").getElementsByTagName("tr")[me.id].getElementsByTagName("td")[2].innerHTML;
+}
+
 function sellAmount () { 
 	//function for selling stocks
 	var rowIndex = Number(document.getElementById("rowIndex").innerHTML)
@@ -70,20 +71,68 @@ function sellAmount () {
 		document.getElementById("sim1").getElementsByTagName("tr")[rowIndex].getElementsByTagName("td")[1].innerHTML = '$' + priceOfSingleStock * (amount - amountSelling)
 
 		if(amount - amountSelling ===0){
-		document.getElementById("sim1").deleteRow(rowIndex)
+			document.getElementById("sim1").deleteRow(rowIndex)
 		}
+
 		updateCash();
+
 	}else{
 		alert("You can not sell more stocks then you own")
 	}
 }
 
-function sellAll () { //when selling an entire transaction from the simulator
-	// body...
+function sellingShort(me){
+
+	document.getElementById("rowIndex").innerHTML = me.id;
+	document.getElementById("stockBeingSold2").innerHTML = "Stock: " + document.getElementById("sim1").getElementsByTagName("tr")[me.id].getElementsByTagName("td")[0].innerHTML;
+	document.getElementById("amountShort").innerHTML = "Amount: " + document.getElementById("sim1").getElementsByTagName("tr")[me.id].getElementsByTagName("td")[2].innerHTML;
+	document.getElementById("newValue").innerHTML = "Current Value: " + document.getElementById("sim1").getElementsByTagName("tr")[me.id].getElementsByTagName("td")[1].innerHTML; 
+	//document.getElementById("netDiff").innerHTML = "Net Gain/Loss: $" + (initialBuyValue - document.getElementById("sim1").getElementsByTagName("tr")[me.id].getElementsByTagName("td")[1].innerHTML);
 }
 
 function shortSell () { //when using short sell 
-	// body...
+	
+	var amount = Number(document.getElementById("amount").value); //get amount input
+
+	//Transaction calculations
+
+	var shortBuyPrice = (currentPrice * amount)
+
+	//buyPrice must be stored at this point for access later (in intialBuyPrice), feauture will be added
+	//when the capabilities exist
+	
+	console.log("Buy Price: " + shortBuyPrice)  //Total amount spent
+
+	x = 0; //0 is a short sell transaction
+
+	//Add transaction to table
+	addRow(2, (document.getElementById("autocomplete").value).toUpperCase(), shortBuyPrice, amount);
+}
+
+function shortBuy () {
+
+	var rowIndex = Number(document.getElementById("rowIndex").innerHTML);
+	var tempTicker = document.getElementById("sim1").getElementsByTagName("tr")[rowIndex].getElementsByTagName("td")[0].innerHTML;
+	var priceAllStocks = document.getElementById("sim1").getElementsByTagName("tr")[rowIndex].getElementsByTagName("td")[1].innerHTML; 
+	var amount =document.getElementById("sim1").getElementsByTagName("tr")[rowIndex].getElementsByTagName("td")[2].innerHTML; //get amount input
+	priceAllStocks = Number(priceAllStocks.slice(1,priceAllStocks.length-1));
+	var priceOfSingleStock = priceAllStocks / amount;
+
+	var intialBuyPrice; //needs to be pulled from stored data, not yet possible
+	
+	shortSellPrice = intialBuyValue - priceAllStocks //difference between value when bought and current value
+
+	console.log("Short Sell Value: " + shortSellPrice)
+
+	Port0.cash = Port0.cash + shortSellPrice; //adds the difference to total cash
+
+	console.log("Total Cash: " + Port0.cash)
+
+	//delete transaction from table
+	document.getElementById("sim1").deleteRow(rowIndex)
+
+	updateCash();
+
 }
 
 function updateCash () {
@@ -92,8 +141,8 @@ function updateCash () {
 	var table = document.getElementById("sim1");
 	var rowLength = table.rows.length;
 	table.rows[rowLength-2].cells[1].innerHTML = "$" + Port0.cash;
-
 }
+
 function updatePrice(){
 	
 	var tableData = new Array()
@@ -145,8 +194,8 @@ function updatePrice(){
 					}
 				})
 
-					 AppData.v1.pricedata.GET(temptick)
-	    .then(function(data){
+			AppData.v1.pricedata.GET(temptick)
+	    	.then(function(data){
 
 	    
 
@@ -156,20 +205,17 @@ function updatePrice(){
 	        console.log(tableData)
 
 	    })
-			
-
 		} 
 	})
-
-	})(i);
+})(i);
 
 function fillinginvalue(){
 	alert("working")
 	for (var z = 1; z <= tableData.length; z++) {
 		var amount = document.getElementById("sim1").getElementsByTagName("tr")[z].getElementsByTagName("td")[2].innerHTML
-	document.getElementById("sim1").getElementsByTagName("tr")[z].getElementsByTagName("td")[1].innerHTML = "$" + (tableData[z-1].val*amount)
-	};
-}
-setTimeout( function(){fillinginvalue()}, 5000)
-}
+		document.getElementById("sim1").getElementsByTagName("tr")[z].getElementsByTagName("td")[1].innerHTML = "$" + (tableData[z-1].val*amount)
+		};
+	}
+	setTimeout( function(){fillinginvalue()}, 5000)
+	}
 }

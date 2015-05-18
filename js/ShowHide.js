@@ -9,6 +9,7 @@ function showWindow(index) {
 	var divPopTrade = document.getElementById('Trade');
 	var divPopMarket = document.getElementById('Market');
 	var divSell = document.getElementById('Sell');
+	var divShortSell = document.getElementById('ShortSell');
 
 	//Hide every window first
 	divStem.style.display = 'none';
@@ -17,6 +18,7 @@ function showWindow(index) {
 	divPopTrade.style.display = 'none';
 	divPopMarket.style.display = 'none';
 	divSell.style.display = 'none';
+	divShortSell.style.display = 'none';
 
 	//Show specific window
 	if (index == 0) {
@@ -36,5 +38,8 @@ function showWindow(index) {
 	};
 	if (index == 5) {
 		divSell.style.display = 'block';
+	};
+	if (index == 6) {
+		divShortSell.style.display = 'block';
 	};
 }
