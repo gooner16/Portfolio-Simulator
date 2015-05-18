@@ -44,9 +44,9 @@ window.onload = function() {
 				document.getElementById("amount").blur();
 				document.getElementById("alertStock").innerHTML = "";
 
-			}else{ //If input is NAN
+			} else { //If input is NAN
 
-				document.getElementById("alertStock").innerHTML = "Enter a number";
+				document.getElementById("alertStock").innerHTML = "Please enter a number.";
 			}
 		}
 	}
@@ -63,7 +63,7 @@ window.onload = function() {
 
 			}else{ //If input is NAN
 
-				document.getElementById("alertStock").innerHTML = "Enter a number";
+				document.getElementById("alertStock").innerHTML = "Please enter a number.";
 			}
 		}
 	}
