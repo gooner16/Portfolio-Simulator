@@ -2,6 +2,7 @@
 
 
 var rowLength1 = 2;
+var z = 0;
 
 function addRow(ind,text,value,amount) {
 
@@ -58,10 +59,12 @@ function addRow(ind,text,value,amount) {
 
 		if (x==1) {
 			cell5.innerHTML = '<input type = "button" id = "hello" value = "Sell" onclick = "showWindow(5);selling(this);">'
-			document.getElementById("hello").id= rowLength - 2
+			document.getElementById("hello").id = z;
+			z++;
 		}else{
 			cell5.innerHTML = '<input type = "button" id = "bye" value = "Buy" onclick = "showWindow(6);sellingShort(this);">'
-			document.getElementById("bye").id= rowLength - 2
+			document.getElementById("bye").id = z;
+			z++;
 		};
 
 	};
