@@ -33,13 +33,11 @@ function addRow(ind,text,value,amount) {
 		var cell2 = row.insertCell(1);
 		var cell3 = row.insertCell(2);
 		var cell4 = row.insertCell(3);
-		var cell5 = row.insertCell(4);
 
 		cell1.innerHTML = "Cash";
 		cell2.innerHTML = "$" + text;
-		cell3.innerHTML = "";
-		cell4.innerHTML = "";
-		cell5.innerHTML = "";
+		cell3.innerHTML = "[Change]";
+		cell4.innerHTML = ""
 	};
 
 	if (ind == 2) { //2 for adding stock to Simulator
@@ -57,7 +55,7 @@ function addRow(ind,text,value,amount) {
 		cell1.innerHTML = text;
 		cell2.innerHTML = "$" + value;
 		cell3.innerHTML = amount;
-		cell4.innerHTML = "";
+		cell4.innerHTML = ""
 
 		if (x==1) {
 			cell5.innerHTML = '<input type = "button" id = "hello" value = "Sell" onclick = "showWindow(5);selling(this);">'
@@ -71,8 +69,8 @@ function addRow(ind,text,value,amount) {
 
 	};
 
-	//Apply settings
-	Settings_all();
+	/*//Apply settings
+	Settings_all();*/
 }
 
 //deletes current row
