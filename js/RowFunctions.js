@@ -69,8 +69,8 @@ function addRow(ind,text,value,amount) {
 
 	};
 
-	/*//Apply settings
-	Settings_all();*/
+	//Apply settings
+	Settings_all();
 }
 
 //deletes current row
