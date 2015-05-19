@@ -27,7 +27,7 @@ function buyStock () { //when buying stock in the trade window
 			x = 1; //1 is a buy transaction
 
 			//Add transaction to table
-			addRow(2, (document.getElementById("autocomplete").value).toUpperCase(), (currentPrice * amount), amount);
+			addRow(2, (document.getElementById("autocomplete").value).toUpperCase(), Math.floor(currentPrice * amount*100)/100, amount);
 			//Update remaining cash
 			updateCash();
 		}else{
@@ -79,7 +79,7 @@ function sellAmount () {
 		console.log("Total Cash: " + Port0.cash)
 
 		document.getElementById("sim1").getElementsByTagName("tr")[rowIndex].getElementsByTagName("td")[2].innerHTML = amount - amountSelling
-		document.getElementById("sim1").getElementsByTagName("tr")[rowIndex].getElementsByTagName("td")[1].innerHTML = '$' + priceOfSingleStock * (amount - amountSelling)
+		document.getElementById("sim1").getElementsByTagName("tr")[rowIndex].getElementsByTagName("td")[1].innerHTML = '$' + Math.floor(priceOfSingleStock * (amount - amountSelling)*100)/100;
 
 		if(amount - amountSelling ===0){
 			document.getElementById("sim1").deleteRow(rowIndex)
@@ -164,7 +164,7 @@ function updateCash () {
 	//Update available cash
 	var table = document.getElementById("sim1");
 	var rowLength = table.rows.length;
-	table.rows[rowLength-2].cells[1].innerHTML = "$" + Port0.cash;
+	table.rows[rowLength-2].cells[1].innerHTML = "$" + Math.floor(Port0.cash*100)/100;
 }
 
 function updatePrice(){
