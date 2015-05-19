@@ -39,6 +39,10 @@ function Settings_textColor () {
 	for(var x = 0; x < pLength; x++) {
 		document.getElementsByTagName('button')[x].style.color = textColor;
 	}
+	pLength = document.getElementsByTagName('text').length;
+	for(var x = 0; x < pLength; x++) {
+		document.getElementsByTagName('text')[x].style.color = textColor;
+	}
 }
 
 function Settings_backgroundColor () {
