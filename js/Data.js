@@ -1,6 +1,7 @@
 'use strict';
 
 var Port0 = new Object();
+var checked = 0;
 
 //Create a new portfolio, used in "<!-- Set Parameters -->"
 function newPort () {
@@ -39,9 +40,11 @@ function newPort () {
 			//Radio button selection
 			if (document.getElementById('fixed').checked) {
 				Port0.commis = portCommis;
+				checked = 1
 			} 
 			if (document.getElementById('percent').checked) {
 				Port0.commis = (portCommis / 100);
+				checked = 2
 			}
 
 			addRow(0, Port0.name);

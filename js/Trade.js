@@ -11,7 +11,7 @@ function buyStock () { //when buying stock in the trade window
 	if(amount == 0 || isNaN(amount)){
 		alert("Please enter the number of Stock you would like to buy")
 	}else{
-		if (Port0.commis > 1) { //for fixed commission
+		if (checked == 1) { //for fixed commission
 			var buyPrice = (currentPrice * amount) + Port0.commis;
 		}else{					//for percent commission
 			var buyPrice = (currentPrice * amount) + (Port0.commis*(currentPrice * amount));
@@ -66,7 +66,7 @@ function sellAmount () {
 
 	if( amount - amountSelling >= 0){
 
-		if (Port0.commis > 1) {
+		if (checked == 1) {
 			var sellPrice = (priceOfSingleStock * amountSelling) - Port0.commis;
 		}else{
 			var sellPrice = (priceOfSingleStock * amountSelling) - (Port0.commis*(priceOfSingleStock * amountSelling));
